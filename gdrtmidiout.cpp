@@ -14,7 +14,7 @@ void GDRtMidiOut::_register_methods()
     register_method("getPortCount", &GDRtMidiOut::getPortCount);
     register_method("getPortName", &GDRtMidiOut::getPortName);
     register_method("sendMessage", &GDRtMidiOut::sendMessage);
-    register_method("isPortOpen", &GDRtMidiOut::isPortOpen);
+    register_method("setErrorCallback", &GDRtMidiOut::setErrorCallback);
 }
 
 // GDRtMidiOut ::GDRtMidiOut()
