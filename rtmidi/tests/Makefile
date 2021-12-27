@@ -431,14 +431,14 @@ TEST_LOG_COMPILE = $(TEST_LOG_COMPILER) $(AM_TEST_LOG_FLAGS) \
 am__DIST_COMMON = $(srcdir)/Makefile.in $(top_srcdir)/config/depcomp \
 	$(top_srcdir)/config/test-driver
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} '/home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi-master/config/missing' aclocal-1.16
+ACLOCAL = ${SHELL} '/home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi/config/missing' aclocal-1.16
 AMTAR = $${TAR-tar}
 AM_DEFAULT_VERBOSITY = 0
 AR = /usr/bin/ar
 AS = as
-AUTOCONF = ${SHELL} '/home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi-master/config/missing' autoconf
-AUTOHEADER = ${SHELL} '/home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi-master/config/missing' autoheader
-AUTOMAKE = ${SHELL} '/home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi-master/config/missing' automake-1.16
+AUTOCONF = ${SHELL} '/home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi/config/missing' autoconf
+AUTOHEADER = ${SHELL} '/home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi/config/missing' autoheader
+AUTOMAKE = ${SHELL} '/home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi/config/missing' automake-1.16
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
@@ -449,7 +449,7 @@ CTAGS = ctags
 CXX = g++ -std=c++11
 CXXCPP = g++ -std=c++11 -E
 CXXDEPMODE = depmode=gcc3
-CXXFLAGS = -Wall -Wextra -g -O2
+CXXFLAGS = -Wall -Wextra -g -O2 -fPIC
 CYGPATH_W = echo
 DEFS = -DPACKAGE_NAME=\"RtMidi\" -DPACKAGE_TARNAME=\"rtmidi\" -DPACKAGE_VERSION=\"5.0.0\" -DPACKAGE_STRING=\"RtMidi\ 5.0.0\" -DPACKAGE_BUGREPORT=\"gary.scavone@mcgill.ca\" -DPACKAGE_URL=\"\" -DPACKAGE=\"rtmidi\" -DVERSION=\"5.0.0\" -DHAVE_CXX11=1 -DHAVE_STDIO_H=1 -DHAVE_STDLIB_H=1 -DHAVE_STRING_H=1 -DHAVE_INTTYPES_H=1 -DHAVE_STDINT_H=1 -DHAVE_STRINGS_H=1 -DHAVE_SYS_STAT_H=1 -DHAVE_SYS_TYPES_H=1 -DHAVE_UNISTD_H=1 -DSTDC_HEADERS=1 -DHAVE_DLFCN_H=1 -DLT_OBJDIR=\".libs/\" -DHAVE_SEMAPHORE=1 -DJACK_HAS_PORT_RENAME=1 -DHAVE_LIBPTHREAD=1
 DEPDIR = .deps
@@ -481,7 +481,7 @@ LN_S = ln -s
 LTLIBOBJS = 
 LT_SYS_LIBRARY_PATH = 
 MAINT = #
-MAKEINFO = ${SHELL} '/home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi-master/config/missing' makeinfo
+MAKEINFO = ${SHELL} '/home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi/config/missing' makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
 NM = /usr/bin/nm -B
@@ -505,10 +505,10 @@ SHELL = /bin/sh
 SO_VERSION = 6:0:0
 STRIP = strip
 VERSION = 5.0.0
-abs_builddir = /home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi-master/tests
-abs_srcdir = /home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi-master/tests
-abs_top_builddir = /home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi-master
-abs_top_srcdir = /home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi-master
+abs_builddir = /home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi/tests
+abs_srcdir = /home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi/tests
+abs_top_builddir = /home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi
+abs_top_srcdir = /home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi
 ac_ct_AR = ar
 ac_ct_CC = gcc
 ac_ct_CXX = g++
@@ -539,7 +539,7 @@ host_vendor = pc
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi-master/config/install-sh
+install_sh = ${SHELL} /home/kumi/Projects/gdprojects/gdrtmidi/src/rtmidi/config/install-sh
 libdir = ${exec_prefix}/lib
 libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale

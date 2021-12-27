@@ -5,7 +5,7 @@ if (test "x$#" != "x1") ; then
 fi
 
 LIBRARY="-lpthread -lasound -ljack "
-CXXFLAGS="-Wall -Wextra -g -O2"
+CXXFLAGS="-Wall -Wextra -g -O2 -fPIC"
 CPPFLAGS="  -D__UNIX_JACK__ -D__LINUX_ALSA__"
 
 if (test "x$1" = "x--libs") ; then
