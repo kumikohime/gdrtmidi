@@ -66,6 +66,8 @@ elif env['platform'] in ('x11', 'linux'):
         env.Append(CCFLAGS=['-g3', '-Og'])
     else:
         env.Append(CCFLAGS=['-g', '-O3'])
+    
+    env.Append(LINKFLAGS=['-Wl,--no-undefined', '-Wl,--whole-archive', '-l:librtmidi.a', '-Wl,--no-whole-archive'])
 
 elif env['platform'] == "windows":
     env['target_path'] += 'win64/'
@@ -94,12 +96,12 @@ cpp_library += '.' + str(bits)
 
 # make sure our binding library is properly includes
 env.Append(CPPPATH=['.', godot_headers_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'include/core/', cpp_bindings_path + 'include/gen/', './rtmidi/'])
-env.Append(LIBPATH=[cpp_bindings_path + 'bin/', './rtmidi/.libs/'])
-env.Append(LIBS=[cpp_library, rtmidi_library])
+env.Append(LIBPATH=[cpp_bindings_path + 'bin/', './rtmidi/.libs/', './rtmidi/.deps/'])
+env.Append(LIBS=[cpp_library, 'pthread', 'asound', 'jack'])
 
 # tweak this if you want to use different folders, or more folders, to store your source code in.
 env.Append(CPPPATH=['.'])
-sources = Glob('./*.cpp')
+sources = Glob('./*.cpp', './rtmidi/*.cpp')
 
 library = env.SharedLibrary(target=env['target_path'] + env['target_name'] , source=sources)
 
