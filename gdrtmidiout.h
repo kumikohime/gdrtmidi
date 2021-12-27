@@ -77,7 +77,7 @@ namespace godot
         The callback function will be called whenever an error has occured. It is best
         to set the error callback function before opening a port.
         */
-        virtual void setErrorCallback(RtMidiErrorCallback errorCallback = NULL, void *userData = 0);
+        // virtual void setErrorCallback(RtMidiErrorCallback errorCallback = NULL, void *userData = 0);
 
         /*********** API ***********/
     };

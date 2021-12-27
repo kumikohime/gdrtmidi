@@ -14,7 +14,7 @@ void GDRtMidiOut::_register_methods()
     register_method("getPortCount", &GDRtMidiOut::getPortCount);
     register_method("getPortName", &GDRtMidiOut::getPortName);
     register_method("sendMessage", &GDRtMidiOut::sendMessage);
-    register_method("setErrorCallback", &GDRtMidiOut::setErrorCallback);
+    // register_method("setErrorCallback", &GDRtMidiOut::setErrorCallback);
 }
 
 // GDRtMidiOut ::GDRtMidiOut()
@@ -137,9 +137,9 @@ void GDRtMidiOut::sendMessage(PoolByteArray message)
     }
 }
 
-void GDRtMidiOut::setErrorCallback(RtMidiErrorCallback errorCallback, void *userData)
-{
-    this->midiout->setErrorCallback(errorCallback, userData);
-}
+// void GDRtMidiOut::setErrorCallback(RtMidiErrorCallback errorCallback, void *userData)
+// {
+//     this->midiout->setErrorCallback(errorCallback, userData);
+// }
 
 /*********** API ***********/
