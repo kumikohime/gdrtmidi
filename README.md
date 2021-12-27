@@ -9,6 +9,15 @@ __Currently only the Midi Out interface is supported.__
 
 2. Copy the folder somewhere in your godot project.
 
+# Compiling
+
+1. Clone the repo.
+
+2. Use scons to build ``scons platform=windows/linux/osx``
+Note: you might need to build rtmidi yourself if compiling for windows/osx
+``cd rtmidi && ./autogen.sh && make``
+In a future update this will be addressed.
+
 # Usage
 
 1. Refer to the RtMidiOut Class Interface
