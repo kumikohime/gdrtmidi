@@ -1,0 +1,14 @@
+[general]
+
+singleton=false
+load_once=true
+symbol_prefix="godot_"
+reloadable=true
+
+[entry]
+
+X11.64="res://addons/gdrtmidi/lib/x11/libgdrtmidi.so"
+
+[dependencies]
+
+X11.64=[ "res://gdrtmidi/lib/x11/librtmidi.so.6" ]
