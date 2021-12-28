@@ -50,18 +50,15 @@ void GDRtMidiOut::_process(float delta)
 void GDRtMidiOut::initialize(int api, String clientName)
 {
     auto c_name = std::string(clientName.alloc_c_string());
-    auto api_ = static_cast<RtMidi::Api>(RtMidi::UNIX_JACK);
-    // if (midiout == NULL)
-    // {
-    //     RtMidiOut *tmp = new RtMidiOut(api_, c_name);
-    //     delete this->midiout;
-    //     this->midiout = tmp;
-    // }
-    // else
-    this->midiout = new RtMidiOut(api_, c_name);
-
-    Godot::print(Variant(api));
-    Godot::print(clientName);
+    auto api_ = static_cast<RtMidi::Api>(api);
+    if (midiout == NULL)
+    {
+        RtMidiOut *tmp = new RtMidiOut(api_, c_name);
+        delete this->midiout;
+        this->midiout = tmp;
+    }
+    else
+        this->midiout = new RtMidiOut(api_, c_name);
 }
 
 RtMidi::Api GDRtMidiOut::getCurrentApi(void) throw()
