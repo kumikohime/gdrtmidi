@@ -38,7 +38,6 @@ GDRtMidiOut::~GDRtMidiOut()
 
 void GDRtMidiOut::_init()
 {
-    this->midiout = new RtMidiOut;
 }
 
 void GDRtMidiOut::_process(float delta)
