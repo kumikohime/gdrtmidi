@@ -17,15 +17,6 @@ void GDRtMidiOut::_register_methods()
     // register_method("setErrorCallback", &GDRtMidiOut::setErrorCallback);
 }
 
-// GDRtMidiOut ::GDRtMidiOut()
-// {
-//     auto api_ = static_cast<RtMidi::Api>(api);
-//     std::string c_name = std::string(clientName.alloc_c_string());
-//     this->midiout = new RtMidiOut(api_, c_name);
-//     Godot::print(clientName);
-//     Godot::print(Variant(api));
-// }
-
 GDRtMidiOut::GDRtMidiOut()
 {
 }
@@ -74,19 +65,15 @@ void GDRtMidiOut::openPort(unsigned int portNumber, String portName)
         unsigned int u_pnum = (unsigned int)portNumber;
         std::string p_name = std::string(portName.alloc_c_string());
         this->midiout->openPort(portNumber, p_name);
-        // Godot::print(portName);
     }
     catch (RtMidiError e)
     {
-        // Godot::print("error opening port");
-        // Godot::print(e.getMessage().c_str());
         std::cout << (e.getMessage());
     }
 }
 
 void GDRtMidiOut::closePort(void)
 {
-    Godot::print("attempting to close port");
     this->midiout->closePort();
 }
 
@@ -97,8 +84,15 @@ bool GDRtMidiOut::isPortOpen() const
 
 void GDRtMidiOut::openVirtualPort(const String portName)
 {
-    auto p_name = std::string(portName.alloc_c_string());
-    this->midiout->openVirtualPort(p_name);
+    try
+    {
+        auto p_name = std::string(portName.alloc_c_string());
+        this->midiout->openVirtualPort(p_name);
+    }
+    catch (RtMidiError e)
+    {
+        std::cout << (e.getMessage());
+    }
 }
 
 unsigned int GDRtMidiOut::getPortCount(void)
