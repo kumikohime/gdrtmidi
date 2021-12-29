@@ -7,6 +7,10 @@ reloadable=true
 
 [entry]
 
+Windows.64="res://addons/gdrtmidi/lib/win/gdrtmidi.dll"
 X11.64="res://addons/gdrtmidi/lib/x11/libgdrtmidi.so"
 
 [dependencies]
+
+Windows.64=[  ]
+X11.64=[  ]
